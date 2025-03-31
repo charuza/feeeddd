@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobacco Farmer Feedback | FarmerVoice</title>
+    <link rel="stylesheet" href="feedback2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Feedback Form -->
+    <form id="tobaccoFeedbackForm" class="feedback-form">
+        <!-- Section 1: Farmer Details -->
+        <fieldset class="form-section active" data-section="1">
+            <legend><span class="section-number">1</span> Your Information</legend>
+            <div class="form-group">
+                <label for="farmerName">Full Name*</label>
+                <input type="text" id="farmerName" name="farmerName" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Farm Location (District/Village)*</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="yearsFarming">Years of Tobacco Farming Experience*</label>
+                <select id="yearsFarming" name="yearsFarming" required>
+                    <option value="">Select</option>
+                    <option value="1-5">1-5 years</option>
+                    <option value="6-10">6-10 years</option>
+                    <option value="10+">10+ years</option>
+                </select>
+            </div>
+            <button type="button" class="btn next-btn">Next <i class="fas fa-arrow-right"></i></button>
+        </fieldset>
+
+        <!-- Section 2: Seeds & Cultivation -->
+        <fieldset class="form-section" data-section="2">
+            <legend><span class="section-number">2</span> Seeds & Cultivation</legend>
+            <div class="form-group">
+                <label>Seed Quality This Season*</label>
+                <div class="rating">
+                    <input type="radio" id="seed5" name="seedQuality" value="5" required>
+                    <label for="seed5">Excellent</label>
+                    <input type="radio" id="seed4" name="seedQuality" value="4">
+                    <label for="seed4">Good</label>
+                    <input type="radio" id="seed3" name="seedQuality" value="3">
+                    <label for="seed3">Average</label>
+                    <input type="radio" id="seed2" name="seedQuality" value="2">
+                    <label for="seed2">Poor</label>
+                    <input type="radio" id="seed1" name="seedQuality" value="1">
+                    <label for="seed1">Very Poor</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="seedIssues">What challenges did you face with seeds?*</label>
+                <select id="seedIssues" name="seedIssues" required multiple>
+                    <option value="LowGermination">Low germination rate</option>
+                    <option value="Disease">Disease susceptibility</option>
+                    <option value="PoorYield">Poor yield potential</option>
+                    <option value="Availability">Limited availability</option>
+                </select>
+                <small>Hold Ctrl/Cmd to select multiple</small>
+            </div>
+            <div class="form-group">
+                <label for="desiredVarieties">What seed varieties would you like next season?</label>
+                <textarea id="desiredVarieties" name="desiredVarieties" placeholder="E.g., Drought-resistant, early-maturing..."></textarea>
+            </div>
+            <div class="form-navigation">
+                <button type="button" class="btn prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                <button type="button" class="btn next-btn">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </fieldset>
+
+        <!-- Section 3: Pricing & Market -->
+        <fieldset class="form-section" data-section="3">
+            <legend><span class="section-number">3</span> Pricing & Market</legend>
+            <div class="form-group">
+                <label>Were tobacco prices fair this season?*</label>
+                <div class="rating">
+                    <input type="radio" id="price5" name="priceFairness" value="VeryFair" required>
+                    <label for="price5">Very Fair</label>
+                    <input type="radio" id="price4" name="priceFairness" value="Fair">
+                    <label for="price4">Fair</label>
+                    <input type="radio" id="price3" name="priceFairness" value="Neutral">
+                    <label for="price3">Neutral</label>
+                    <input type="radio" id="price2" name="priceFairness" value="Unfair">
+                    <label for="price2">Unfair</label>
+                    <input type="radio" id="price1" name="priceFairness" value="VeryUnfair">
+                    <label for="price1">Very Unfair</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="priceSuggestions">What pricing improvements would you suggest?*</label>
+                <textarea id="priceSuggestions" name="priceSuggestions" required placeholder="E.g., Higher prices for Grade A leaves, timely payments..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="marketChallenges">Biggest market challenges this season:</label>
+                <input type="text" id="marketChallenges" name="marketChallenges" placeholder="E.g., Transportation costs, buyer monopolies...">
+            </div>
+            <div class="form-navigation">
+                <button type="button" class="btn prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                <button type="button" class="btn next-btn">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </fieldset>
+
+        <!-- Section 4: Support Services -->
+        <fieldset class="form-section" data-section="4">
+            <legend><span class="section-number">4</span> Support Services</legend>
+            <div class="form-group">
+                <label>Extension Service Quality*</label>
+                <div class="rating">
+                    <input type="radio" id="service5" name="serviceQuality" value="5" required>
+                    <label for="service5">Excellent</label>
+                    <input type="radio" id="service4" name="serviceQuality" value="4">
+                    <label for="service4">Good</label>
+                    <input type="radio" id="service3" name="serviceQuality" value="3">
+                    <label for="service3">Average</label>
+                    <input type="radio" id="service2" name="serviceQuality" value="2">
+                    <label for="service2">Poor</label>
+                    <input type="radio" id="service1" name="serviceQuality" value="1">
+                    <label for="service1">Very Poor</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="neededServices">Which services do you need most?*</label>
+                <select id="neededServices" name="neededServices" required multiple>
+                    <option value="Training">Farming training</option>
+                    <option value="Credit">Access to credit</option>
+                    <option value="Inputs">Subsidized inputs</option>
+                    <option value="Storage">Storage facilities</option>
+                    <option value="Insurance">Crop insurance</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="additionalComments">Other comments:</label>
+                <textarea id="additionalComments" name="additionalComments" placeholder="Any other feedback..."></textarea>
+            </div>
+            <div class="form-navigation">
+                <button type="button" class="btn prev-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+                <button type="submit" class="btn submit-btn">Submit Feedback</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <!-- Thank You Modal (Hidden by Default) -->
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Thank You!</h2>
+                <p>Your feedback has been submitted successfully.</p>
+                <a href="index.html" class="btn">Return to Homepage</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="feedback2.js"></script>
+</body>
+</html>
